@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GoogleMapsDemo</string>
+    <string name="show_map_in_dialog">Show map in a dialog</string>
+    <string name="show_map_in_fragment">Show map in a fragment</string>
+    <string name="gp_services_are_not_available">Google Play Services are not available</string>
+    <string name="map_here_soon">A map\'ll be here soon</string>
+</resources>
