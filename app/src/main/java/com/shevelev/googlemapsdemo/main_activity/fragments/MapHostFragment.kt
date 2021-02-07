@@ -45,8 +45,8 @@ class MapHostFragment : Fragment(), OnMapReadyCallback {
 
         this.map = map
 
-//        showPins()
-        showPinsClustered()
+        showPins()
+//        showPinsClustered()
     }
 
     private fun startMapLoading() {
@@ -65,13 +65,20 @@ class MapHostFragment : Fragment(), OnMapReadyCallback {
 
             pins.forEach {
                 val pinDraw = pinsDrawStorage.getItem(it)
-                val markerOptions = MarkerOptions()
-                    .position(it.position)
-                    .icon(BitmapDescriptorFactory.fromBitmap(pinDraw.bitmap))
-                    .anchor(pinDraw.spearheadRelativeX, 1f)
-                map.addMarker(markerOptions)
+                addPin(map, pinDraw, it.position)
             }
         }
+    }
+
+    /**
+     * Put a pin on a map
+     */
+    private fun addPin(map: GoogleMap, pin: PinDrawResult, location: LatLng) {
+        val markerOptions = MarkerOptions()
+            .position(location)
+            .icon(BitmapDescriptorFactory.fromBitmap(pin.bitmap))
+            .anchor(pin.anchorX, 1f)
+        map.addMarker(markerOptions)
     }
 
     /**

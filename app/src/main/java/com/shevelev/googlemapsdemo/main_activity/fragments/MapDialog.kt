@@ -135,7 +135,7 @@ class MapDialog : BottomSheetDialogFragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(location)
                 .icon(BitmapDescriptorFactory.fromBitmap(pinInfo.bitmap))
-                .anchor(pinInfo.spearheadRelativeX, 1.0f))
+                .anchor(pinInfo.anchorX, 1.0f))
     }
 
     private fun startLoadingMap() {

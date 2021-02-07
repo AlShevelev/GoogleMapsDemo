@@ -18,12 +18,12 @@ class PinsClusterRenderer(
     override fun onBeforeClusterItemRendered(item: PinInfo, markerOptions: MarkerOptions) {
         val pin = pinDrawStorage.getItem(item)
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(pin.bitmap))
-        markerOptions.anchor(pin.spearheadRelativeX, 1f)
+        markerOptions.anchor(pin.anchorX, 1f)
     }
 
     override fun onClusterItemUpdated(item: PinInfo, marker: Marker) {
         val pin = pinDrawStorage.getItem(item)
         marker.setIcon(BitmapDescriptorFactory.fromBitmap(pin.bitmap))
-        marker.setAnchor(pin.spearheadRelativeX, 1f)
+        marker.setAnchor(pin.anchorX, 1f)
     }
 }

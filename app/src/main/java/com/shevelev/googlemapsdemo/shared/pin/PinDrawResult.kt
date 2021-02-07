@@ -8,5 +8,5 @@ data class PinDrawResult(
     /**
      * Relative X coordinate of a pip spearhead
      */
-    val spearheadRelativeX: Float
+    val anchorX: Float
 )
